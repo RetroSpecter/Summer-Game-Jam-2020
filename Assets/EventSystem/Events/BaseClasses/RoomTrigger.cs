@@ -18,7 +18,7 @@ public class RoomTrigger : EventTrigger
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.GetComponent<NavMeshCharacterController>() != null && !alreadyHappened)
+        if (other.GetComponent<RigidbodyCharacterController>() != null && !alreadyHappened)
             triggerOn?.Invoke();
     }
 

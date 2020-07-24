@@ -17,7 +17,7 @@ public class SceneTransition : MonoBehaviour
         SceneManager.instance.transitionOut(transitionName);
     }
 
-    public void transitionIn(NavMeshCharacterController player) {
+    public void transitionIn(RigidbodyCharacterController player) {
         player.transform.forward = sceneStartPosition.forward;
         player.transform.position = sceneStartPosition.transform.position;
     }

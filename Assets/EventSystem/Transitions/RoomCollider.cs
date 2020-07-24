@@ -9,13 +9,13 @@ public class RoomCollider : MonoBehaviour
     public ColliderEvent playerExit;
 
     private void OnTriggerEnter(Collider other) {
-        if(other.GetComponent<NavMeshCharacterController>() != null)
+        if(other.GetComponent<RigidbodyCharacterController>() != null)
             playerEnter?.Invoke();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<NavMeshCharacterController>() != null)
+        if (other.GetComponent<RigidbodyCharacterController>() != null)
             playerExit?.Invoke();
     }
 }

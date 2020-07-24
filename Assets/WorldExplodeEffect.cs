@@ -18,13 +18,14 @@ public class WorldExplodeEffect : MonoBehaviour
         volume.profile.TryGet(out ca);
     }
 
-    
+    /*
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) {
             StartEffect();
         }
     }
+    */
     
     
     public Sequence StartEffect() {

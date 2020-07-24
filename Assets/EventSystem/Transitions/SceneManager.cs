@@ -31,7 +31,7 @@ public class SceneManager : MonoBehaviour
     }
 
     public void transitionIn() {
-        sceneLookup[currentScene].transitionIn(FindObjectOfType<NavMeshCharacterController>());
+        sceneLookup[currentScene].transitionIn(FindObjectOfType<RigidbodyCharacterController>());
         currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
     }
 }

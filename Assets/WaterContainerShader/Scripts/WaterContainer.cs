@@ -33,7 +33,7 @@ public class WaterContainer : WaterFill
         Sequence s = base.ChangeFillAmount(targetFillLevel, fillTime);
 
         if (targetFillLevel > 0) {
-            s.Join(grassSpreadArea.transform.DOScale(spreadRange, fillTime));
+            s.Join(grassSpreadArea.transform.DOScale(spreadRange * 10, fillTime));
             s.Join(grassSpreadArea.DOFade(1, fillTime));
         } else {
             s.Join(grassSpreadArea.transform.DOScale(0, fillTime));

@@ -7,7 +7,7 @@ using Cinemachine;
 public class EventManager : MonoBehaviour
 {
     //TODO: switch this out when we finalize the characterController
-    NavMeshCharacterController player;
+    RigidbodyCharacterController player;
     public static EventManager instance;
     public CinemachineBrain cinemachineBrain;
     public float eventCameraBlends;
@@ -16,7 +16,7 @@ public class EventManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        player = FindObjectOfType<NavMeshCharacterController>();
+        player = FindObjectOfType<RigidbodyCharacterController>();
     }
 
     public void setRoomCam(CinemachineVirtualCamera vCam) {

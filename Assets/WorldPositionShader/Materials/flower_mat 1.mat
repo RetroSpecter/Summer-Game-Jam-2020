@@ -22,10 +22,10 @@ Material:
     m_TexEnvs: []
     m_Floats:
     - _OrthographicCamSize: 0
-    - _radius: 1.96
+    - _radius: 2
     - _targetPosition: 1
     m_Colors:
     - Color_14F24004: {r: 0.3726415, g: 0.8244723, b: 1, a: 1}
     - _Position: {r: 0, g: 0, b: 0, a: 0}
     - _radius: {r: 0, g: 0, b: 0, a: 0}
-    - _targetPosition: {r: -45.76, g: 0.15, b: -12.38, a: 0}
+    - _targetPosition: {r: -47.69, g: 0.3, b: -10.15, a: 0}

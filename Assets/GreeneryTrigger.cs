@@ -12,12 +12,12 @@ using UnityEngine;
 public class GreeneryTrigger : MonoBehaviour
 {
     public AnimatedObject animatedObject;
-
+    public bool restrictToXZPlane;
 
     bool _watersourceNearby;
     void Update()
     {
-        bool  watersourceNearby = WaterContainerManager.instance.IsWatersourceNearby(transform.position, false);
+        bool watersourceNearby = WaterContainerManager.instance.IsWatersourceNearby(transform.position, restrictToXZPlane);
         if (watersourceNearby != _watersourceNearby) {
             animatedObject.SwitchState();
         }
