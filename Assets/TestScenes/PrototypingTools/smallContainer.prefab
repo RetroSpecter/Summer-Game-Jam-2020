@@ -250,9 +250,8 @@ GameObject:
   - component: {fileID: 6087038779492766101}
   - component: {fileID: 6087038779492766098}
   - component: {fileID: 6087038779492766099}
-  - component: {fileID: 6087038779492766100}
   m_Layer: 11
-  m_Name: smallWaterContainer
+  m_Name: smallContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,19 +307,3 @@ CapsuleCollider:
   m_Height: 1.25
   m_Direction: 1
   m_Center: {x: 0, y: 0.49, z: -0.00000023841858}
---- !u!208 &6087038779492766100
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6087038779492766096}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.5, y: 1, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 1
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
