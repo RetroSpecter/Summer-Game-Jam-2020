@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : EventTrigger
+public class ButtonTrigger : EventTrigger
 {
     public LayerMask pressable;
 

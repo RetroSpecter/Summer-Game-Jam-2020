@@ -17,6 +17,7 @@ public class WaterFill : MonoBehaviour
 
     protected virtual void Start() {
         SetupMaterial();
+        UpdateWaterMat(fillPercentage);
     }
 
     protected virtual void Update() {

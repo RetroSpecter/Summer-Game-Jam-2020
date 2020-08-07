@@ -25,7 +25,7 @@ public class StateMachine : MonoBehaviour {
             IState nextState = null;
             do {
                 nextState = currentState.DoCheck();
-                yield return new WaitForFixedUpdate();
+                yield return null;
             } while (nextState == null);
 
             StopCoroutine(currentBehavior);
@@ -33,7 +33,7 @@ public class StateMachine : MonoBehaviour {
             if (nextState != null) {
                 currentState = nextState;
             }
-            yield return new WaitForFixedUpdate();
+            yield return null;
         }
     }
 

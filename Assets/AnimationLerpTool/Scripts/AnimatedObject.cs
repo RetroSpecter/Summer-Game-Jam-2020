@@ -92,7 +92,7 @@ public class AnimatedObject : MonoBehaviour
 
     TransformState setState(TransformState state)  {
         state.position = transform.localPosition;
-        state.rotation = transform.localEulerAngles;
+        state.rotation = transform.eulerAngles;
         state.scale = transform.localScale;
         return state;
     }

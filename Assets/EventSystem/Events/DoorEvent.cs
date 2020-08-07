@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using Cinemachine;
 
-public class Door : MonoBehaviour
+public class DoorEvent : MonoBehaviour
 {
     public EventTrigger[] triggers;
     int totalTriggers;

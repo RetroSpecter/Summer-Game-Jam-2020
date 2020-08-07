@@ -28,4 +28,4 @@ Material:
     - Color_14F24004: {r: 1, g: 0.28773582, b: 0.28773582, a: 1}
     - _Position: {r: 0, g: 0, b: 0, a: 0}
     - _radius: {r: 0, g: 0, b: 0, a: 0}
-    - _targetPosition: {r: -51.36, g: 0.3, b: -10.14, a: 0}
+    - _targetPosition: {r: -47.7, g: 0.3, b: -13.3, a: 0}

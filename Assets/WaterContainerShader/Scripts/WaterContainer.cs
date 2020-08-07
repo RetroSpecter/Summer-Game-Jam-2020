@@ -3,7 +3,7 @@ using DG.Tweening;
 
 
 [ExecuteInEditMode]
-public class WaterContainer : WaterFill
+public class WaterContainer : WaterFill, IPickupable
 {
     [Space()]
     [SerializeField] private float fillChangetime;
@@ -17,6 +17,7 @@ public class WaterContainer : WaterFill
     protected override void Start() {
         base.Start();
         grassSpreadArea.transform.DOScale(0, 0);
+        UpdateWaterContainerManager(fillPercentage);
     }
 
     public float GetRelativeFillSize() {
