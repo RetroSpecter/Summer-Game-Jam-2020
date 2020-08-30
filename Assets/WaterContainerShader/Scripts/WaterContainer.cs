@@ -10,6 +10,7 @@ public class WaterContainer : WaterFill, IPickupable
     [SerializeField] private SpriteRenderer grassSpreadArea;
     [SerializeField] private float spreadRange = 1;
 
+
     // as opposed to fillPercentage (which is a value between 0 nd 1), 
     // relative fill size is how full the container is to other objects.
     [SerializeField] private float maxRelativeFillSize = 1;
@@ -19,6 +20,7 @@ public class WaterContainer : WaterFill, IPickupable
         grassSpreadArea.transform.DOScale(0, 0);
         UpdateWaterContainerManager(fillPercentage);
     }
+
 
     public float GetRelativeFillSize() {
         return maxRelativeFillSize;
@@ -47,7 +49,6 @@ public class WaterContainer : WaterFill, IPickupable
 
     private void UpdateWaterContainerManager(float level)
     {
-        print(level);
         if(level <= 0)
             WaterContainerManager.instance.RemoveWatersource(this.gameObject);
         else

@@ -16,6 +16,9 @@ public class RigidbodyCharacterController : MonoBehaviour
 
     [SerializeField] private float speed;
     [SerializeField] private LayerMask interactableLayer;
+    [SerializeField] private LayerMask floorLayer;
+    [SerializeField] private LayerMask climbableLayer;
+
     [SerializeField] private float playerFillLevel;
     [SerializeField] private float maxFillLevel;
 
@@ -24,6 +27,8 @@ public class RigidbodyCharacterController : MonoBehaviour
     BranchingState LocomotionState;
 
     public float greeneryRadius = 2.5f;
+    public GameObject greeneryMask;
+    public ParticleSystem greeneryParticles;
 
     // this is really gross to be honest. its also not perfect either
     private bool ZPressed, XPressed;
@@ -36,11 +41,15 @@ public class RigidbodyCharacterController : MonoBehaviour
 
         StateMachine = GetComponent<StateMachine>();
         LocomotionState = new BranchingState(Default);
+        State ClimbingState = new State(Climbing);
         State PushPullState = new State(PushPull);
-        State PickUpObjectState = new State(PickUpObject);
+        State PickUpObjectState = new State(PickUpObject);       
 
         LocomotionState.addBranch(isPushingPulling, PushPullState);
         LocomotionState.addBranch(isPickedUp, PickUpObjectState);
+        LocomotionState.addBranch(canClimb, ClimbingState);
+
+        ClimbingState.SetNextState(isFinishedClimbing, LocomotionState);
 
         PushPullState.SetNextState(() => { return pickedUpObject == null; }, LocomotionState);
         PickUpObjectState.SetNextState(() => { return pickedUpObject == null; }, LocomotionState);
@@ -75,16 +84,72 @@ public class RigidbodyCharacterController : MonoBehaviour
         return Input.GetKeyDown(KeyCode.X) && IsCollidingWithInteractable(out RaycastHit hit) && hit.transform.TryGetComponent(out IPickupable container);
     }
 
+    // we will probably need this to be more complex later.
+    public bool isFinishedClimbing() {
+        CapsuleCollider collider = GetComponent<CapsuleCollider>();
+        Debug.DrawRay(transform.position + collider.radius * transform.forward + transform.up * collider.height/2, transform.forward * 0.25f, Color.red);
+
+        Ray groundRay = new Ray(transform.position, -Vector3.up);
+        Ray finishedClimbingRay = new Ray(transform.position, transform.forward);
+        Debug.DrawRay(groundRay.origin, groundRay.direction * 0.01f, Color.red);
+        Debug.DrawRay(finishedClimbingRay.origin, finishedClimbingRay.direction * (collider.radius + 0.1f), Color.green);
+       
+        if (Physics.Raycast(groundRay, 0.1f, floorLayer) || Input.GetKeyDown(KeyCode.X)) {
+            transform.forward *= -1;
+            return true;
+        }
+        
+        
+
+        if (Physics.Raycast(finishedClimbingRay, out RaycastHit surface, collider.radius + 0.1f, climbableLayer)) {
+            transform.forward = -surface.normal;
+        } else {
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool canClimb() {
+        CapsuleCollider collider = GetComponent<CapsuleCollider>();
+
+        Ray canClimbRay = new Ray(transform.position + transform.up * collider.height/2 + transform.forward * collider.radius, transform.forward);
+        Debug.DrawRay(canClimbRay.origin, canClimbRay.direction * 0.25f, Color.red);
+
+        return Physics.Raycast(canClimbRay, out RaycastHit surface, collider.radius + 0.05f, climbableLayer);
+    }
+
     protected IEnumerator Default()
     {
+        rigid.useGravity = true;
         while (true)
         {
             Locomotion();
-            if (ZPressed)
+            if (Input.GetKeyDown(KeyCode.Z))
             {
                 InteractWithContainer();
                 InteractWithWell();
             }
+            yield return null;
+        }
+    }
+
+    protected IEnumerator Climbing() {
+        rigid.useGravity = false;
+
+        //just the slightest lift to get the player raycast not touching the ground
+        //transform.position += Vector3.up * 0.1f;
+
+        while (true) {
+            Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            // TODO: make this based on angle
+            Ray forwardRay = new Ray(transform.position, transform.forward);
+
+            if (Physics.Raycast(forwardRay, out RaycastHit surface, collider.radius + 0.1f, climbableLayer)) {
+                transform.forward = -surface.normal;
+            }
+
+            rigid.velocity = (transform.up * input.y) * speed/2;
             yield return null;
         }
     }
@@ -143,7 +208,6 @@ public class RigidbodyCharacterController : MonoBehaviour
             rigid.velocity = new Vector3(input.x * speed, rigid.velocity.y, input.z * speed);
         }
     }
-
 
     private void InteractWithWell()
     {
@@ -208,6 +272,10 @@ public class RigidbodyCharacterController : MonoBehaviour
         if (canFill(container) || !containerEmpty)
         {
             Sequence ret = container.FillContainer(containerEmpty ? 1 : 0);
+
+            greeneryMask.transform.DOScale(!containerEmpty ? 12 : 0, 0.5f);
+            ParticleSystem.EmissionModule em = greeneryParticles.emission;
+            em.rateOverDistanceMultiplier = !containerEmpty ?  1 : 0;
 
             playerFillLevel -= container.GetRelativeFillSize() * (containerEmpty ? 1 : -1);
             playerFillLevel = Mathf.Clamp(playerFillLevel, 0, maxFillLevel);

@@ -24,7 +24,7 @@ Material:
     - Vector1_ECF9AF8B: 0.45
     - Wobble_X: 0
     - Wobble_Z: 0
-    - _FillLevel: 1
+    - _FillLevel: -0.2
     - _WobbleX: 0
     - _WobbleZ: 0
     m_Colors:

@@ -6,7 +6,7 @@ using DG.Tweening;
 public class WaterFill : MonoBehaviour
 {
     public Renderer waterRenderer;
-    protected Material waterMat;
+    protected Material[] waterMats;
 
     [Range(0,1)]
     public float fillPercentage;
@@ -23,14 +23,16 @@ public class WaterFill : MonoBehaviour
     protected virtual void Update() {
         if (!Application.isPlaying) {
             SetupMaterial();
-            if (waterMat != null)
+            if (waterMats != null)
                 UpdateWaterMat(this.fillPercentage);
         }
     }
 
     void SetupMaterial() {
-        if(waterRenderer != null)
-            waterMat = Application.isPlaying ? waterRenderer.material : waterRenderer.sharedMaterial;
+        if (waterRenderer != null)
+        {
+            waterMats = Application.isPlaying ?  waterRenderer.materials : waterRenderer.sharedMaterials;
+        }
     }
 
     public virtual Sequence ChangeFillAmount(float targetFillLevel, float fillTime) {
@@ -52,6 +54,7 @@ public class WaterFill : MonoBehaviour
     }
 
     private void UpdateWaterMat(float fillLevel) {
-        waterMat.SetFloat("_FillLevel", Mathf.Lerp(fillValueOffset.x, fillValueOffset.y, fillLevel));
+        foreach(Material waterMat in waterMats)
+            waterMat.SetFloat("_FillLevel", Mathf.Lerp(fillValueOffset.x, fillValueOffset.y, fillLevel));
     }
 }

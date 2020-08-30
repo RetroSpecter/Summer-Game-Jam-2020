@@ -27,7 +27,7 @@ public class WaterContainerManager : MonoBehaviour
         activeWatersources.Remove(waterSource);
     }
 
-    public bool IsWatersourceNearby(Vector3 position, bool restrictToXZPlane) {
+    public bool IsWatersourceNearby(Vector3 position, bool restrictToXZPlane, float leewayDistance = 0) {
         foreach(GameObject source in activeWatersources.Keys)
         {
             float sourceRadius = activeWatersources[source];
@@ -39,7 +39,7 @@ public class WaterContainerManager : MonoBehaviour
             }
 
             // TODO: Vector.Distance is kind of inefficient but meh. if it becomes an issue, we can change this later
-            if (sourceRadius >= Vector3.Distance(position, sourcePosition)) {
+            if (sourceRadius >= Vector3.Distance(position, sourcePosition) - leewayDistance) {
 
                 return true;
             }

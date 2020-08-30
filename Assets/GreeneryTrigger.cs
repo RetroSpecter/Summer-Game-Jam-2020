@@ -12,15 +12,22 @@ using UnityEngine;
 public class GreeneryTrigger : MonoBehaviour
 {
     public AnimatedObject animatedObject;
+    public float leewayDistance = 0;
     public bool restrictToXZPlane;
 
     bool _watersourceNearby;
     void Update()
     {
-        bool watersourceNearby = WaterContainerManager.instance.IsWatersourceNearby(transform.position, restrictToXZPlane);
+        bool watersourceNearby = WaterContainerManager.instance.IsWatersourceNearby(transform.position, restrictToXZPlane, leewayDistance);
         if (watersourceNearby != _watersourceNearby) {
             animatedObject.SwitchState();
         }
         _watersourceNearby = watersourceNearby;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, leewayDistance);
     }
 }
