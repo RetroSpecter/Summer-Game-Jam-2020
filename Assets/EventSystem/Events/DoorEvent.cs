@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using DG.Tweening;
 using Cinemachine;
 
@@ -50,7 +48,7 @@ public class DoorEvent : MonoBehaviour
             if(vmCam != null)
                 EventManager.instance.setEventCam(vmCam);
         });
-        ret.AppendInterval(0.5f);
+        ret.AppendInterval(EventManager.instance.eventCameraBlends);
 
         ret.AppendCallback(() =>
         {
@@ -62,7 +60,7 @@ public class DoorEvent : MonoBehaviour
             if (vmCam != null)
                 EventManager.instance.resetEventCam(vmCam);
         });
-        ret.AppendInterval(0.5f);
+        ret.AppendInterval(EventManager.instance.eventCameraBlends);
         return ret;
     }
 

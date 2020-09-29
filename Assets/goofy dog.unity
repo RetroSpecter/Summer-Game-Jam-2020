@@ -2354,8 +2354,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatedObject: {fileID: 918097904}
-  leewayDistance: 0
+  ExtraAnimatedObjects: []
+  affectorRadius: 0
   restrictToXZPlane: 0
+  greeneryEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!23 &31801900
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7040,6 +7044,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ae67c05b5028a47b79a81ef0f4ed1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  debugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &116776239
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11716,8 +11722,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatedObject: {fileID: 33413923}
-  leewayDistance: 0
+  ExtraAnimatedObjects: []
+  affectorRadius: 0
   restrictToXZPlane: 1
+  greeneryEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!23 &341455004
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26386,6 +26396,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ae67c05b5028a47b79a81ef0f4ed1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  debugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &438319599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26820,8 +26832,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatedObject: {fileID: 267018849}
-  leewayDistance: 0
+  ExtraAnimatedObjects: []
+  affectorRadius: 0
   restrictToXZPlane: 0
+  greeneryEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &469405193
 Transform:
   m_ObjectHideFlags: 0
@@ -34745,6 +34761,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ae67c05b5028a47b79a81ef0f4ed1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  debugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &755738367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36027,8 +36045,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatedObject: {fileID: 1964484864}
-  leewayDistance: 0
+  ExtraAnimatedObjects: []
+  affectorRadius: 0
   restrictToXZPlane: 0
+  greeneryEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &821743710
 Transform:
   m_ObjectHideFlags: 0
@@ -47183,6 +47205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ae67c05b5028a47b79a81ef0f4ed1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  debugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &1245182691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47552,8 +47576,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatedObject: {fileID: 883737807}
-  leewayDistance: 0
+  ExtraAnimatedObjects: []
+  affectorRadius: 0
   restrictToXZPlane: 0
+  greeneryEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!23 &1287348127
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -55039,6 +55067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ae67c05b5028a47b79a81ef0f4ed1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  debugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &1394574342
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -87035,6 +87065,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ae67c05b5028a47b79a81ef0f4ed1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  debugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &1496561870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -95814,6 +95846,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ae67c05b5028a47b79a81ef0f4ed1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  debugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &1849976644
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -97445,8 +97479,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatedObject: {fileID: 1386790685}
-  leewayDistance: 0
+  ExtraAnimatedObjects: []
+  affectorRadius: 0
   restrictToXZPlane: 0
+  greeneryEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1907219745
 Transform:
   m_ObjectHideFlags: 0
@@ -100169,8 +100207,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatedObject: {fileID: 1438305910}
-  leewayDistance: 0
+  ExtraAnimatedObjects: []
+  affectorRadius: 0
   restrictToXZPlane: 0
+  greeneryEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!23 &1977639560
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -110755,6 +110797,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ae67c05b5028a47b79a81ef0f4ed1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  debugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &2047707676
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -112470,6 +112514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ae67c05b5028a47b79a81ef0f4ed1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debug: 0
+  debugColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!65 &2127258766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -113054,6 +113100,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1560707932, guid: 92473c8a5af79644792de5260546818a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.003002106
+      objectReference: {fileID: 0}
     - target: {fileID: 3392841022278093, guid: 92473c8a5af79644792de5260546818a, type: 3}
       propertyPath: m_LocalScale.x
       value: 12.482481

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class WaterContainerManager : MonoBehaviour
@@ -27,7 +26,12 @@ public class WaterContainerManager : MonoBehaviour
         activeWatersources.Remove(waterSource);
     }
 
-    public bool IsWatersourceNearby(Vector3 position, bool restrictToXZPlane, float leewayDistance = 0) {
+
+    // I am not super in love with this implementation. but it does come with a number of advantages
+    // anything can be made to rely on watersources as long as it access this script
+    // anything can be made a water source as long as it is added to the list
+    // the one major disdvantage to this is that we have to keep this class and datastructure around. which is kind of a hassle
+    public bool IsWatersourceNearby(Vector3 position, bool restrictToXZPlane, float leewayRadius = 0) {
         foreach(GameObject source in activeWatersources.Keys)
         {
             float sourceRadius = activeWatersources[source];
@@ -38,9 +42,7 @@ public class WaterContainerManager : MonoBehaviour
                 sourcePosition.y = 0;
             }
 
-            // TODO: Vector.Distance is kind of inefficient but meh. if it becomes an issue, we can change this later
-            if (sourceRadius >= Vector3.Distance(position, sourcePosition) - leewayDistance) {
-
+            if (sourceRadius >= Vector3.Distance(position, sourcePosition) - leewayRadius/2) {
                 return true;
             }
         }

@@ -37,7 +37,7 @@ public class WaterFill : MonoBehaviour
 
     public virtual Sequence ChangeFillAmount(float targetFillLevel, float fillTime) {
         Sequence s = DOTween.Sequence();
-        s.Join(DOTween.To(() => fillPercentage, x => {
+        s.Append(DOTween.To(() => fillPercentage, x => {
             fillPercentage = x;
             UpdateWaterMat(fillPercentage);
         }, targetFillLevel, fillTime));

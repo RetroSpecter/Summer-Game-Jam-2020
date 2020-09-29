@@ -1,26 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
-
-//TODO: I REALLY REALLY REALLLY  need to come up with a better name for this
-// I was thinkiong of an RT approach, similar to how the greenery shader works
-// but I wasn't quite able to figure it out. So Im going with this approach instead or radius from sources
-// should work just fine, but if we want to mix up the gameplay we might want to revisit this implementation
-
-// could go with some sort of raycast approach from each object instead as an option. it might be more efficient
 public class GreeneryTrigger : MonoBehaviour
 {
     public AnimatedObject animatedObject;
-    public float leewayDistance = 0;
+
+    //TODO: ideally we would have one animated object, but I don't want to break previously setup animated objects
+    public AnimatedObject[] ExtraAnimatedObjects;
+    public float affectorRadius = 0;
     public bool restrictToXZPlane;
+    public UnityEvent greeneryEvent;
 
     bool _watersourceNearby;
     void Update()
     {
-        bool watersourceNearby = WaterContainerManager.instance.IsWatersourceNearby(transform.position, restrictToXZPlane, leewayDistance);
+        bool watersourceNearby = WaterContainerManager.instance.IsWatersourceNearby(transform.position, restrictToXZPlane, affectorRadius);
         if (watersourceNearby != _watersourceNearby) {
             animatedObject.SwitchState();
+            foreach (AnimatedObject a in ExtraAnimatedObjects) {
+                a.SwitchState();
+            }
+            greeneryEvent.Invoke();
         }
         _watersourceNearby = watersourceNearby;
     }
@@ -28,6 +28,6 @@ public class GreeneryTrigger : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, leewayDistance);
+        Gizmos.DrawWireSphere(transform.position, affectorRadius/2);
     }
 }

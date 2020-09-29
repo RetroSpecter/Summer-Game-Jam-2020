@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour {
 
+    IEnumerator currentBehavior;
+
     public void StartStateMachine(IState startState)
     {
         StartCoroutine(RunState(startState));
@@ -13,13 +15,15 @@ public class StateMachine : MonoBehaviour {
     public void StopStateMachine()
     {
         StopAllCoroutines();
+        if(currentBehavior != null)
+            StopCoroutine(currentBehavior);
     }
 
     public IEnumerator RunState(IState startState)
     {
         IState currentState = startState;
         while (true) {
-            IEnumerator currentBehavior = currentState.getCurrentBehavior();
+            currentBehavior = currentState.getCurrentBehavior();
             StartCoroutine(currentBehavior);
 
             IState nextState = null;

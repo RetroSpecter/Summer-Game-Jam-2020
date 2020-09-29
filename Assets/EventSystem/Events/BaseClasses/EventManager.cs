@@ -30,11 +30,13 @@ public class EventManager : MonoBehaviour
     }
 
     public void setEventCam(CinemachineVirtualCamera vCam) {
+        player.StopAllAction();
         cinemachineBrain.m_DefaultBlend.m_Time = eventCameraBlends;
         vCam.Priority = 12;
     }
 
     public void resetEventCam(CinemachineVirtualCamera vCam) {
+        player.RestartAction();
         cinemachineBrain.m_DefaultBlend.m_Time = eventCameraBlends;
         vCam.Priority = 9;
     }
@@ -52,7 +54,7 @@ public class EventManager : MonoBehaviour
 
         if (pausePlayer) {
             seq.AppendCallback(() => {
-                player.RestartAction();
+                
             });
         }
     }

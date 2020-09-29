@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(StateMachine))]
 [RequireComponent(typeof(WaterFill))]
@@ -13,6 +14,7 @@ public class RigidbodyCharacterController : MonoBehaviour
     private WaterFill playerWaterFill;
     private Rigidbody rigid;
     private CapsuleCollider collider;
+    private Camera cam;
 
     [SerializeField] private float speed;
     [SerializeField] private LayerMask interactableLayer;
@@ -30,11 +32,16 @@ public class RigidbodyCharacterController : MonoBehaviour
     public GameObject greeneryMask;
     public ParticleSystem greeneryParticles;
 
+    public Transform pickupPos;
+
+    public Animator anim;
+
     // this is really gross to be honest. its also not perfect either
     private bool ZPressed, XPressed;
 
-    protected virtual void Start()
+    private void OnEnable()
     {
+        cam = Camera.main;
         playerWaterFill = GetComponent<WaterFill>();
         collider = GetComponent<CapsuleCollider>();
         rigid = GetComponent<Rigidbody>();
@@ -57,6 +64,7 @@ public class RigidbodyCharacterController : MonoBehaviour
         StateMachine.StartStateMachine(LocomotionState);
         playerFillLevel = Mathf.Min(playerFillLevel, maxFillLevel);
         playerWaterFill.ChangeFillAmount(playerFillLevel / maxFillLevel, 0);
+        greeneryMask.transform.DOScale( greeneryRadius, 0);
         UpdateWaterContainerManager();
     }
 
@@ -68,15 +76,21 @@ public class RigidbodyCharacterController : MonoBehaviour
     public void StopAllAction()
     {
         StateMachine.StopStateMachine();
+
+        //TODO: the better way to do this would be to make the dropping pickedUPObject its own state
+        if (pickedUpObject != null) {
+            pickedUpObject.transform.parent = null;
+            pickedUpObject = null;
+            anim.SetTrigger("pushingTrigger");
+        }
     }
 
-    public void RestartAction()
-    {
+    public void RestartAction() {
         StateMachine.StartStateMachine(LocomotionState);
     }
 
     public bool isPushingPulling() {
-        return Input.GetKey(KeyCode.X) && IsCollidingWithInteractable(out RaycastHit hit) && hit.transform.TryGetComponent(out IPushable pushable);
+        return Input.GetKeyDown(KeyCode.X) && IsCollidingWithInteractable(out RaycastHit hit) && hit.transform.TryGetComponent(out IPushable pushable);
     }
 
     public bool isPickedUp()
@@ -84,28 +98,32 @@ public class RigidbodyCharacterController : MonoBehaviour
         return Input.GetKeyDown(KeyCode.X) && IsCollidingWithInteractable(out RaycastHit hit) && hit.transform.TryGetComponent(out IPickupable container);
     }
 
-    // we will probably need this to be more complex later.
     public bool isFinishedClimbing() {
         CapsuleCollider collider = GetComponent<CapsuleCollider>();
         Debug.DrawRay(transform.position + collider.radius * transform.forward + transform.up * collider.height/2, transform.forward * 0.25f, Color.red);
 
         Ray groundRay = new Ray(transform.position, -Vector3.up);
-        Ray finishedClimbingRay = new Ray(transform.position, transform.forward);
-        Debug.DrawRay(groundRay.origin, groundRay.direction * 0.01f, Color.red);
-        Debug.DrawRay(finishedClimbingRay.origin, finishedClimbingRay.direction * (collider.radius + 0.1f), Color.green);
+
+        Debug.DrawRay(groundRay.origin, groundRay.direction, Color.red);
+
        
-        if (Physics.Raycast(groundRay, 0.1f, floorLayer) || Input.GetKeyDown(KeyCode.X)) {
+        if (Physics.Raycast(groundRay, 0.05f, floorLayer) || Input.GetKeyDown(KeyCode.X)) {
             transform.forward *= -1;
+            anim.SetTrigger("climbingTrigger");
             return true;
         }
-        
-        
 
-        if (Physics.Raycast(finishedClimbingRay, out RaycastHit surface, collider.radius + 0.1f, climbableLayer)) {
+        
+        Ray finishedClimbingRay = new Ray(transform.position, transform.forward);
+        Debug.DrawRay(finishedClimbingRay.origin, finishedClimbingRay.direction, Color.green);
+
+        if (Physics.Raycast(finishedClimbingRay, out RaycastHit surface, collider.radius + 0.5f, climbableLayer)) {
             transform.forward = -surface.normal;
         } else {
+            anim.SetTrigger("climbingTrigger");
             return true;
         }
+        
 
         return false;
     }
@@ -113,10 +131,12 @@ public class RigidbodyCharacterController : MonoBehaviour
     public bool canClimb() {
         CapsuleCollider collider = GetComponent<CapsuleCollider>();
 
-        Ray canClimbRay = new Ray(transform.position + transform.up * collider.height/2 + transform.forward * collider.radius, transform.forward);
-        Debug.DrawRay(canClimbRay.origin, canClimbRay.direction * 0.25f, Color.red);
-
-        return Physics.Raycast(canClimbRay, out RaycastHit surface, collider.radius + 0.05f, climbableLayer);
+        Ray canClimbRay = new Ray(transform.position + transform.up * collider.height/2, transform.forward);
+        Debug.DrawRay(canClimbRay.origin, canClimbRay.direction, Color.red);
+        if (Physics.Raycast(canClimbRay, collider.radius + 0.05f, climbableLayer)) {
+            anim.SetTrigger("climbingTrigger");
+        }
+        return Physics.Raycast(canClimbRay, collider.radius + 0.05f, climbableLayer);
     }
 
     protected IEnumerator Default()
@@ -136,30 +156,48 @@ public class RigidbodyCharacterController : MonoBehaviour
 
     protected IEnumerator Climbing() {
         rigid.useGravity = false;
-
         //just the slightest lift to get the player raycast not touching the ground
-        //transform.position += Vector3.up * 0.1f;
-
+        transform.position += Vector3.up * 0.15f;
         while (true) {
-            Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            // TODO: make this based on angle
+            Vector3 input = GetInputFromCamera();
+            input = new Vector2(input.x, input.z);
+
             Ray forwardRay = new Ray(transform.position, transform.forward);
 
             if (Physics.Raycast(forwardRay, out RaycastHit surface, collider.radius + 0.1f, climbableLayer)) {
                 transform.forward = -surface.normal;
+                Vector3 targetPosition = surface.transform.position;
+                targetPosition.y = transform.position.y;
+                transform.position = targetPosition - transform.forward * (collider.radius * 1.5f);
             }
 
-            rigid.velocity = (transform.up * input.y) * speed/2;
+            Vector2 dir = new Vector2(transform.forward.x, transform.forward.z).normalized;
+            float dot = Vector3.Dot(input, dir);
+            dot = Mathf.Round(dot);
+            
+            rigid.velocity = transform.up * dot * speed/2;
+
+            anim.SetFloat("velocity", rigid.velocity.y);
+
             yield return null;
         }
     }
 
+    public delegate void animAction();
+    public animAction pickup;
+    public animAction putDown;
+
     protected IEnumerator PickUpObject() {
         if (IsCollidingWithInteractable(out RaycastHit hit) &&  hit.transform.TryGetComponent(out IPickupable container)) {
-            pickedUpObject = hit.transform.gameObject;
-            pickedUpObject.transform.parent = this.transform;
-            pickedUpObject.transform.position = transform.position + transform.up * 2;
+            anim.SetTrigger("pickupTrigger");
+            pickedUpObject = hit.transform.gameObject;    
+            pickedUpObject.transform.parent = pickupPos;
+            pickedUpObject.transform.position = pickupPos.position;
+
+            yield return new WaitForSeconds(0.6f);
+            pickup?.Invoke();
         }
+
 
         while (Input.GetKey(KeyCode.X))
         {
@@ -173,39 +211,69 @@ public class RigidbodyCharacterController : MonoBehaviour
             yield return null;
         }
 
+        anim.SetTrigger("putdownTrigger");
+
+        yield return new WaitForSeconds(0.5f);
+
+        putDown?.Invoke();
         pickedUpObject.transform.parent = null;
         pickedUpObject.transform.position = transform.position + this.transform.forward;
-        pickedUpObject = null;
+        pickedUpObject.transform.rotation = Quaternion.identity;
 
+        yield return new WaitForSeconds(0.5f);
+
+        pickedUpObject = null;
     }
 
     protected IEnumerator PushPull() {
-        Vector3 direction = Vector3.zero;
-        if (IsCollidingWithInteractable(out RaycastHit hit) && hit.transform.TryGetComponent(out IPushable pushable)) {
-            direction = hit.normal;
-            transform.forward = -hit.normal;
-            pickedUpObject = hit.transform.gameObject;
-            pickedUpObject.transform.parent = this.transform;
+        if (!IsCollidingWithInteractable(out RaycastHit hit) || !hit.transform.TryGetComponent(out IPushable pushable)) {
+            yield break;
         }
-     
-        while (Input.GetKey(KeyCode.X)) {
-            Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        anim.SetTrigger("pushingTrigger");
+
+        transform.forward = -hit.normal;
+        pickedUpObject = hit.transform.gameObject;
+        pickedUpObject.transform.parent = this.transform;
+
+
+        if (pickedUpObject.GetComponent<Rigidbody>() != null)
+        {
+            pickedUpObject.GetComponent<Rigidbody>().isKinematic = true;
+            pickedUpObject.transform.position -= hit.normal * 0.05f;
+        }
+
+        print(Physics.Raycast(pickedUpObject.transform.position, Vector3.down, 1f, floorLayer));
+        while (Input.GetKey(KeyCode.X) && Physics.Raycast(transform.position + Vector3.up * 0.5f, Vector3.down, 0.6f, floorLayer) && (pickedUpObject.GetComponent<Rigidbody>() == null || Physics.Raycast(pickedUpObject.transform.position, Vector3.down, 1f, floorLayer))) {
+            Vector3 input = GetInputFromCamera();
             float dot = Vector3.Dot(input, transform.forward);
             rigid.velocity =  transform.forward * dot * speed / 1.5f;
+
+            anim.SetFloat("velocity", dot);
             yield return null;
         }
 
+        if (pickedUpObject.GetComponent<Rigidbody>() != null)
+        {
+            pickedUpObject.GetComponent<Rigidbody>().isKinematic = false;
+        }
         pickedUpObject.transform.parent = null;
-        pickedUpObject = null;       
+        pickedUpObject = null;
+        anim.SetTrigger("pushingTrigger");
+
     }
 
     private void Locomotion()
     {
-        Vector3 input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 input = GetInputFromCamera();
+        anim.SetFloat("velocity", input.magnitude);
         if (input.sqrMagnitude >= 0.01f)
         {
             transform.forward = input;
-            rigid.velocity = new Vector3(input.x * speed, rigid.velocity.y, input.z * speed);
+            
+            //if (NavMesh.SamplePosition(transform.position + transform.forward * 0.5f, out NavMeshHit hit, 0.1f, NavMesh.AllAreas)) {
+                rigid.velocity = new Vector3(input.x * speed, rigid.velocity.y, input.z * speed);
+            //}
         }
     }
 
@@ -234,10 +302,12 @@ public class RigidbodyCharacterController : MonoBehaviour
         {
             if (hit.transform.TryGetComponent(out WaterContainer container))
             {
-                // fill up with water
-                Sequence ret = TransferWaterToContainer(container);
-                ret.PrependCallback(() => { StopAllAction(); });
-                ret.AppendCallback(() => { RestartAction(); });
+                //fill up with water
+                Sequence ret = DOTween.Sequence();
+ 
+                ret.AppendCallback(() => {StopAllAction(); });
+                ret.Append(TransferWaterToContainer(container));
+                ret.AppendCallback(() => {RestartAction(); });
             }
         }
     }
@@ -259,33 +329,40 @@ public class RigidbodyCharacterController : MonoBehaviour
         return false;
     }
 
-    private bool canFill(WaterContainer container)
-    {
-        return playerFillLevel >= container.GetRelativeFillSize();
-    }
+    private Sequence TransferWaterToContainer(WaterContainer container) {
+        Sequence ret = null;
+        if (container.IsContainerEmpty()) {
+            float initialContainerAmount = container.GetRelativeFillSize();
+            float containerFillAmount = Mathf.Clamp(initialContainerAmount + playerFillLevel, 0, container.maxRelativeFillSize);
+            
+            ret = container.FillContainer(containerFillAmount);
+            playerFillLevel -= containerFillAmount - initialContainerAmount;
 
-    //TODO: we need to have enough water to fill up container
-    private Sequence TransferWaterToContainer(WaterContainer container)
-    {
-        bool containerEmpty = container.IsContainerEmpty();
-
-        if (canFill(container) || !containerEmpty)
-        {
-            Sequence ret = container.FillContainer(containerEmpty ? 1 : 0);
-
-            greeneryMask.transform.DOScale(!containerEmpty ? 12 : 0, 0.5f);
-            ParticleSystem.EmissionModule em = greeneryParticles.emission;
-            em.rateOverDistanceMultiplier = !containerEmpty ?  1 : 0;
-
-            playerFillLevel -= container.GetRelativeFillSize() * (containerEmpty ? 1 : -1);
             playerFillLevel = Mathf.Clamp(playerFillLevel, 0, maxFillLevel);
             ret.Join(playerWaterFill.ChangeFillAmount(playerFillLevel / maxFillLevel, 1));
             UpdateWaterContainerManager();
-            return ret;
+
+            greeneryMask.transform.DOScale(Mathf.Lerp(0, greeneryRadius, playerFillLevel/maxFillLevel), 0.5f);
+            if (playerFillLevel == 0) {
+                ParticleSystem.EmissionModule em = greeneryParticles.emission;
+                em.rateOverDistanceMultiplier = 0;
+            }
+            
+        } else {
+            float initialContainerAmount = playerFillLevel;
+            float playerFillAmount = Mathf.Clamp(playerFillLevel + container.GetRelativeFillSize(), 0, maxFillLevel);
+
+            print(playerFillAmount);
+
+            playerFillLevel += playerFillAmount;
+            ret = container.FillContainer(Mathf.Clamp(container.GetRelativeFillSize() - playerFillAmount, 0, container.maxRelativeFillSize));
+
+            playerFillLevel = Mathf.Clamp(playerFillLevel, 0, maxFillLevel);
+            ret.Join(playerWaterFill.ChangeFillAmount(playerFillLevel / maxFillLevel, 1));
+            UpdateWaterContainerManager();
         }
-
-        return null;
-
+        
+        return ret;
     }
 
     private void UpdateWaterContainerManager()
@@ -294,6 +371,23 @@ public class RigidbodyCharacterController : MonoBehaviour
             WaterContainerManager.instance.RemoveWatersource(this.gameObject);
         else
             //TODO: should formalize this magic number
-            WaterContainerManager.instance.AddWatersource(this.gameObject, 2.5f);
+            WaterContainerManager.instance.AddWatersource(this.gameObject, greeneryRadius);
+    }
+
+    private Vector3 GetInputFromCamera() {
+        Vector3 input = new Vector3(-Input.GetAxis("Horizontal"),0, -Input.GetAxis("Vertical"));
+        //Vector3 camXComponent = cam.transform.right;
+        //camXComponent.y = 0;
+        //Vector3 camZComponent = cam.transform.forward;
+        //camZComponent.y = 0;
+
+        //return camXComponent * input.x + camZComponent * input.y;
+        return input;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, greeneryRadius);
     }
 }

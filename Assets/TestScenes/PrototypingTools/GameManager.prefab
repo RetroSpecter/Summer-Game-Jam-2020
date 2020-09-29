@@ -262,6 +262,7 @@ Transform:
   - {fileID: 3446657267340303832}
   - {fileID: 3446657269357639884}
   - {fileID: 6113901955790562361}
+  - {fileID: 994662693591828968}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -289,6 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9425546583596ca4fbf5dea2b43b455f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cinemachineBrain: {fileID: 3446657269357639883}
+  eventCameraBlends: 1
+  transitionCameraBlends: 1
 --- !u!1 &3446657268387077859
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,3 +495,189 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &4701542879004341682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994662693591828968}
+  - component: {fileID: 1313535316383745337}
+  - component: {fileID: 5752880738065339926}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &994662693591828968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701542879004341682}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3446657268259273882}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1313535316383745337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701542879004341682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79b9158058ef47a43982e0aba6e3e7b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultVolume: 1
+  audioQueues:
+  - name: leaf_rustle
+    audioSource: {fileID: 5752880738065339926}
+    audio:
+    - {fileID: 8300000, guid: 9cd3b6c59c757a34d8c4004b4cc7229b, type: 3}
+    - {fileID: 8300000, guid: fc005f3193f44f4428a85c60a426027b, type: 3}
+    - {fileID: 8300000, guid: 695dd41eb7037bf4da017357419746e4, type: 3}
+    volume: 0.15
+    pitchRange: {x: 0.95, y: 1.05}
+  - name: buttonClick
+    audioSource: {fileID: 5752880738065339926}
+    audio:
+    - {fileID: 8300000, guid: 6ff098c3c527ff04d96e3986a713c3e2, type: 3}
+    volume: 0.5
+    pitchRange: {x: 0.95, y: 1.05}
+  - name: doorOpening
+    audioSource: {fileID: 5752880738065339926}
+    audio:
+    - {fileID: 8300000, guid: 6ff098c3c527ff04d96e3986a713c3e2, type: 3}
+    volume: 0.5
+    pitchRange: {x: 0.95, y: 1.05}
+  - name: waterFill
+    audioSource: {fileID: 5752880738065339926}
+    audio:
+    - {fileID: 8300000, guid: 6ff098c3c527ff04d96e3986a713c3e2, type: 3}
+    volume: 0.5
+    pitchRange: {x: 0.95, y: 1.05}
+  - name: waterEmpty
+    audioSource: {fileID: 5752880738065339926}
+    audio:
+    - {fileID: 8300000, guid: 6ff098c3c527ff04d96e3986a713c3e2, type: 3}
+    volume: 0.5
+    pitchRange: {x: 0.95, y: 1.05}
+  - name: Bark
+    audioSource: {fileID: 5752880738065339926}
+    audio:
+    - {fileID: 8300000, guid: 6ff098c3c527ff04d96e3986a713c3e2, type: 3}
+    volume: 0.5
+    pitchRange: {x: 0.95, y: 1.05}
+  - name: Growl
+    audioSource: {fileID: 5752880738065339926}
+    audio:
+    - {fileID: 8300000, guid: 6ff098c3c527ff04d96e3986a713c3e2, type: 3}
+    volume: 0.5
+    pitchRange: {x: 0.95, y: 1.05}
+--- !u!82 &5752880738065339926
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4701542879004341682}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

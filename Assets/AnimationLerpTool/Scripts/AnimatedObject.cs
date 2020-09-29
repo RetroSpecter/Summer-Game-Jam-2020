@@ -77,7 +77,7 @@ public class AnimatedObject : MonoBehaviour
         currentSequence = DOTween.Sequence();
         currentSequence.Append(transform.DOLocalMove(state.position, t)).SetEase(ease);
         currentSequence.Join(transform.DOScale(state.scale, t)).SetEase(ease);
-        currentSequence.Join(transform.DOLocalRotate(state.rotation, t)).SetEase(ease);
+        currentSequence.Join(transform.DOLocalRotate(state.rotation, t, RotateMode.Fast)).SetEase(ease);
     }
 
     public void SetInitialState()
@@ -92,7 +92,7 @@ public class AnimatedObject : MonoBehaviour
 
     TransformState setState(TransformState state)  {
         state.position = transform.localPosition;
-        state.rotation = transform.eulerAngles;
+        state.rotation = transform.localEulerAngles;
         state.scale = transform.localScale;
         return state;
     }

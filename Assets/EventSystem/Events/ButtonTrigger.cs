@@ -9,13 +9,15 @@ public class ButtonTrigger : EventTrigger
     public bool _buttonOn;
 
     void Update() {
-        RaycastHit pressed;
         bool buttonOn = false;
 
         Vector3 raycastPos = transform.position;
-        Debug.DrawRay(raycastPos, Vector3.up * 1, Color.red);
-        if (Physics.Raycast(transform.position, transform.up, out pressed, 1f, pressable)) {
+        if (Physics.Raycast(transform.position, transform.up, out RaycastHit pressed, 1f, pressable))
+        {
             buttonOn = true;
+            Debug.DrawLine(transform.position, pressed.point, Color.blue);
+        } else {
+            Debug.DrawRay(raycastPos, Vector3.up * 50, Color.red);
         }
 
         if (buttonOn != _buttonOn) {

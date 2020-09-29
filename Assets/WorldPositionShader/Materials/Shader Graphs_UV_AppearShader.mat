@@ -26,4 +26,4 @@ Material:
     - _radius: 2
     m_Colors:
     - Vector2_F356868C: {r: 0.1, g: 0.5, b: 0, a: 0}
-    - _targetPosition: {r: -44.62, g: 0.3, b: -13.3, a: 0}
+    - _targetPosition: {r: 36, g: -2.9, b: -62.2, a: 0}

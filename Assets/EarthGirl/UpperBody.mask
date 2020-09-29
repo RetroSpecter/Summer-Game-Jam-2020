@@ -1,0 +1,209 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UpperBody
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: backpack_geo1
+    m_Weight: 0
+  - m_Path: flower_0001:pSphere1
+    m_Weight: 0
+  - m_Path: water_girl
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/center_neck_2_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/center_neck_2_bind_joint/center_head_1_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/center_neck_2_bind_joint/center_head_1_bind_joint/center_head_null_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/center_neck_2_bind_joint/center_head_1_bind_joint/flower_0001:joint1
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/center_neck_2_bind_joint/center_head_1_bind_joint/flower_0001:joint1/flower_0001:joint2
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/center_neck_2_bind_joint/center_head_1_bind_joint/flower_0001:joint1/flower_0001:joint2/flower_0001:joint3
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/center_neck_2_bind_joint/center_head_1_bind_joint/flower_0001:joint1/flower_0001:joint2/flower_0001:joint3/flower_0001:joint4
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/center_neck_2_bind_joint/center_head_1_bind_joint/flower_0001:joint1/flower_0001:joint2/flower_0001:joint3/flower_0001:joint4/flower_0001:joint5
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/center_neck_2_bind_joint/center_head_1_bind_joint/flower_0001:joint1/flower_0001:joint2/flower_0001:joint3/flower_0001:joint4/flower_0001:joint5/flower_0001:joint6
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/joint7
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/joint7/joint8
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/joint7/joint8/joint1
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/joint7/joint8/joint1/joint2
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/joint7/joint8/joint1/joint2/joint3
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/joint7/joint8/joint1/joint2/joint3/joint4
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/joint7/joint8/joint1/joint2/joint3/joint4/joint5
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/center_neck_1_bind_joint/joint7/joint8/joint1/joint2/joint3/joint4/joint5/joint6
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_index_1_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_index_1_bind_joint/left_index_2_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_index_1_bind_joint/left_index_2_bind_joint/left_index_3_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_index_1_bind_joint/left_index_2_bind_joint/left_index_3_bind_joint/left_index_end_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_middle_1_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_middle_1_bind_joint/left_middle_2_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_middle_1_bind_joint/left_middle_2_bind_joint/left_middle_3_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_middle_1_bind_joint/left_middle_2_bind_joint/left_middle_3_bind_joint/left_middle_end_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_pinky_1_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_pinky_1_bind_joint/left_pinky_2_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_pinky_1_bind_joint/left_pinky_2_bind_joint/left_pinky_3_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_pinky_1_bind_joint/left_pinky_2_bind_joint/left_pinky_3_bind_joint/left_pinky_end_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_ring_1_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_ring_1_bind_joint/left_ring_2_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_ring_1_bind_joint/left_ring_2_bind_joint/left_ring_3_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_ring_1_bind_joint/left_ring_2_bind_joint/left_ring_3_bind_joint/left_ring_end_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_thumb_1_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_thumb_1_bind_joint/left_thumb_2_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_thumb_1_bind_joint/left_thumb_2_bind_joint/left_thumb_3_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/left_clavicle_bind_joint/left_upperarm_bind_joint/left_lowerarm_bind_joint/left_hand_bind_joint/left_thumb_1_bind_joint/left_thumb_2_bind_joint/left_thumb_3_bind_joint/left_thumb_end_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_index_1_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_index_1_bind_joint/right_index_2_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_index_1_bind_joint/right_index_2_bind_joint/right_index_3_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_index_1_bind_joint/right_index_2_bind_joint/right_index_3_bind_joint/right_index_end_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_middle_1_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_middle_1_bind_joint/right_middle_2_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_middle_1_bind_joint/right_middle_2_bind_joint/right_middle_3_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_middle_1_bind_joint/right_middle_2_bind_joint/right_middle_3_bind_joint/right_middle_end_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_pinky_1_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_pinky_1_bind_joint/right_pinky_2_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_pinky_1_bind_joint/right_pinky_2_bind_joint/right_pinky_3_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_pinky_1_bind_joint/right_pinky_2_bind_joint/right_pinky_3_bind_joint/right_pinky_end_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_ring_1_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_ring_1_bind_joint/right_ring_2_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_ring_1_bind_joint/right_ring_2_bind_joint/right_ring_3_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_ring_1_bind_joint/right_ring_2_bind_joint/right_ring_3_bind_joint/right_ring_end_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_thumb_1_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_thumb_1_bind_joint/right_thumb_2_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_thumb_1_bind_joint/right_thumb_2_bind_joint/right_thumb_3_bind_joint
+    m_Weight: 1
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/center_spine_1_bind_joint/center_spine_2_bind_joint/center_spine_3_bind_joint/right_clavicle_bind_joint/right_upperarm_bind_joint/right_lowerarm_bind_joint/right_hand_bind_joint/right_thumb_1_bind_joint/right_thumb_2_bind_joint/right_thumb_3_bind_joint/right_thumb_end_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/left_upperleg_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/left_upperleg_bind_joint/left_lowerleg_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/left_upperleg_bind_joint/left_lowerleg_bind_joint/left_foot_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/left_upperleg_bind_joint/left_lowerleg_bind_joint/left_foot_bind_joint/left_ball_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/left_upperleg_bind_joint/left_lowerleg_bind_joint/left_foot_bind_joint/left_ball_bind_joint/left_foot_end_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/right_upperleg_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/right_upperleg_bind_joint/right_lowerleg_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/right_upperleg_bind_joint/right_lowerleg_bind_joint/right_foot_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/right_upperleg_bind_joint/right_lowerleg_bind_joint/right_foot_bind_joint/right_ball_bind_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/center_root_bind_joint/right_upperleg_bind_joint/right_lowerleg_bind_joint/right_foot_bind_joint/right_ball_bind_joint/right_foot_end_joint
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/left_foot_ctrl
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/left_knee_pv_ctrl
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/right_foot_ctrl
+    m_Weight: 0
+  - m_Path: water_girl/ctrls_grp/right_knee_pv_ctrl
+    m_Weight: 0
+  - m_Path: water_girl/do_not_touch
+    m_Weight: 0
+  - m_Path: water_girl/do_not_touch/left_foot_ik
+    m_Weight: 0
+  - m_Path: water_girl/do_not_touch/right_foot_ik
+    m_Weight: 0
+  - m_Path: water_girl/skins_grp
+    m_Weight: 0
+  - m_Path: water_girl/skins_grp/grey_model
+    m_Weight: 0
+  - m_Path: water_girl/skins_grp/grey_model/curve1
+    m_Weight: 0
+  - m_Path: water_girl/skins_grp/grey_model/curve2
+    m_Weight: 0
+  - m_Path: water_girl/skins_grp/grey_model/curve3
+    m_Weight: 0
+  - m_Path: water_girl/skins_grp/grey_model/curve4
+    m_Weight: 0
+  - m_Path: water_girl/skins_grp/grey_model/curve5
+    m_Weight: 0

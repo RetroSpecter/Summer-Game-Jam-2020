@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class PushableBlock : MonoBehaviour, IPushable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public void StartPushble(Transform parent) {
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void StopPushing(Transform parent) {
+
     }
 }
