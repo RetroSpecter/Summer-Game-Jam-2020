@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.509434, g: 0.10813459, b: 0.4854454, a: 1}
+  m_AmbientSkyColor: {r: 0.6509434, g: 0.16887684, b: 0.18778135, a: 1}
   m_AmbientEquatorColor: {r: 0.3820755, g: 0.75283015, b: 1, a: 1}
   m_AmbientGroundColor: {r: 0.14150941, g: 0.00066749885, b: 0.03055955, a: 1}
   m_AmbientIntensity: 1
@@ -6033,7 +6033,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 067363c741bf4ec4da94cc8356bf611f, type: 2}
   - {fileID: 2100000, guid: 568b196ec36df4342aabd1168290649c, type: 2}
   - {fileID: 2100000, guid: 70f72f48dd39215438681a69d967b496, type: 2}
-  paletteIndex: 0
+  paletteIndex: 1
   palettes:
   - skyColor: {r: 0.8113208, g: 0.5431438, b: 0.3023318, a: 0}
     shadowColor: {r: 0.509434, g: 0.10813459, b: 0.4854454, a: 1}

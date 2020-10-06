@@ -221,7 +221,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35254
+  m_Name: pb_Mesh50230
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -465,7 +465,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35266
+  m_Name: pb_Mesh101644
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -628,7 +628,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-61238
+  m_Name: pb_Mesh-69414
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1094,7 +1094,7 @@ GameObject:
   - component: {fileID: 334969440}
   - component: {fileID: 334969439}
   - component: {fileID: 334969438}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Cube (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1867,7 +1867,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35152
+  m_Name: pb_Mesh50112
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2482,6 +2482,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrokenPillar3 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8129721760648482465, guid: 472a7b2942180d844b8a3b3b4d72aa68,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b7f330b43eb06d4cbeacbafa3cc6cde, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 472a7b2942180d844b8a3b3b4d72aa68, type: 3}
 --- !u!1 &668945887
@@ -2874,7 +2879,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35072
+  m_Name: pb_Mesh101422
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3068,7 +3073,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35230
+  m_Name: pb_Mesh50208
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8681,7 +8686,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35130
+  m_Name: pb_Mesh50090
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8999,7 +9004,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35094
+  m_Name: pb_Mesh50050
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9399,7 +9404,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35180
+  m_Name: pb_Mesh101554
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9623,6 +9628,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrokenPillar3
       objectReference: {fileID: 0}
+    - target: {fileID: 8129721760648482465, guid: 472a7b2942180d844b8a3b3b4d72aa68,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b7f330b43eb06d4cbeacbafa3cc6cde, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 472a7b2942180d844b8a3b3b4d72aa68, type: 3}
 --- !u!1 &1252123726 stripped
@@ -9651,7 +9661,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh35192
+  m_Name: pb_Mesh101566
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9821,7 +9831,7 @@ GameObject:
   - component: {fileID: 1677574499}
   - component: {fileID: 1677574498}
   - component: {fileID: 1677574497}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Cube (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10131,7 +10141,7 @@ GameObject:
   - component: {fileID: 1741737720}
   - component: {fileID: 1741737719}
   - component: {fileID: 1741737718}
-  m_Layer: 5
+  m_Layer: 13
   m_Name: Cube (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10458,6 +10468,90 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1945309407
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -4216859302048453862, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -83.43
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.62
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2947162723460727154, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b7f330b43eb06d4cbeacbafa3cc6cde, type: 2}
+    - target: {fileID: -927199367670048503, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_Name
+      value: doorway (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1309896199404092638, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090739740420479316, guid: 34d134f095701bf4d8451f231360baf5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34d134f095701bf4d8451f231360baf5, type: 3}
 --- !u!1001 &1946968386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10720,7 +10814,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 568b196ec36df4342aabd1168290649c, type: 2}
+      objectReference: {fileID: 2100000, guid: 0b7f330b43eb06d4cbeacbafa3cc6cde, type: 2}
     - target: {fileID: -927199367670048503, guid: 34d134f095701bf4d8451f231360baf5,
         type: 3}
       propertyPath: m_Name
@@ -11697,7 +11791,7 @@ GameObject:
   - component: {fileID: 2111128323}
   - component: {fileID: 2111128322}
   - component: {fileID: 2111128321}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -39,6 +39,8 @@ public class WorldExplodeEffect : MonoBehaviour
         if (alreadyWon)
             return null;
 
+        RigidbodyCharacterController player = FindObjectOfType<RigidbodyCharacterController>();
+
         Sequence s = DOTween.Sequence();
         s.Append(DOTween.To(() => ld.intensity.value, x => ld.intensity.value = x , -0.25f, 0.25f));
         s.Append(DOTween.To(() => ld.intensity.value, x => ld.intensity.value = x, 0.5f, 0.15f).SetEase(Ease.Linear));
@@ -47,6 +49,7 @@ public class WorldExplodeEffect : MonoBehaviour
             DOTween.To(() => worldSpaceEffect.radius, x => worldSpaceEffect.radius = x, 100f, 1f).SetEase(Ease.Linear);
             ps.Play();
         });
+        s.Join(player.expandWater(2));
         s.Append(DOTween.To(() => ld.intensity.value, x => ld.intensity.value = x, 0f, 2f).SetEase(Ease.Linear));
         s.Join(DOTween.To(() => ca.intensity.value, x => ca.intensity.value = x, 0f, 3f).SetEase(Ease.Linear));
         s.AppendInterval(2);

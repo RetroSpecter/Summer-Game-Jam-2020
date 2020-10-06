@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5185,7 +5185,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-478084
+  m_Name: pb_Mesh197338
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5840,7 +5840,7 @@ GameObject:
   - component: {fileID: 570053596}
   - component: {fileID: 570053595}
   - component: {fileID: 570053594}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7513,7 +7513,7 @@ GameObject:
   - component: {fileID: 1070727369}
   - component: {fileID: 1070727368}
   - component: {fileID: 1070727367}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8080,6 +8080,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: greeneryCube (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2230865131349086173, guid: 68ad94d6f820e5145b746758c44e5fa3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4572308147529382821, guid: 68ad94d6f820e5145b746758c44e5fa3,
         type: 3}
@@ -8926,7 +8931,7 @@ GameObject:
   - component: {fileID: 2068140542}
   - component: {fileID: 2068140541}
   - component: {fileID: 2068140540}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}

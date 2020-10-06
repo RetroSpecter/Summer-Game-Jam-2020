@@ -16,6 +16,12 @@ public class WorldSpaceEffectManager : MonoBehaviour
     void Update()
     {
         UpdateWorldSpaceEffect();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+            Application.Quit();
+
+        if (Input.GetKeyDown(KeyCode.R))
+            Application.LoadLevel(Application.loadedLevel);
     }
 
     private void UpdateWorldSpaceEffect()

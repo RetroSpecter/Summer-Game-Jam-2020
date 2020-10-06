@@ -564,15 +564,15 @@ MonoBehaviour:
   - name: waterFill
     audioSource: {fileID: 5752880738065339926}
     audio:
-    - {fileID: 8300000, guid: 6ff098c3c527ff04d96e3986a713c3e2, type: 3}
-    volume: 0.5
-    pitchRange: {x: 0.95, y: 1.05}
+    - {fileID: 8300000, guid: bf1a48ed000ecf748935e3100ab00a3a, type: 3}
+    volume: 0.25
+    pitchRange: {x: 0.95, y: 0.9}
   - name: waterEmpty
     audioSource: {fileID: 5752880738065339926}
     audio:
-    - {fileID: 8300000, guid: 6ff098c3c527ff04d96e3986a713c3e2, type: 3}
-    volume: 0.5
-    pitchRange: {x: 0.95, y: 1.05}
+    - {fileID: 8300000, guid: bf1a48ed000ecf748935e3100ab00a3a, type: 3}
+    volume: 0.25
+    pitchRange: {x: 0.95, y: 0.9}
   - name: Bark
     audioSource: {fileID: 5752880738065339926}
     audio:

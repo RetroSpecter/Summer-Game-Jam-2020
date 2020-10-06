@@ -23,7 +23,7 @@ Material:
     m_Floats:
     - Vector1_36A2BD24: 1.56
     - Vector1_CA97909E: 1.5
-    - _radius: 2
+    - _radius: 2.56
     m_Colors:
     - Vector2_F356868C: {r: 0.1, g: 0.5, b: 0, a: 0}
-    - _targetPosition: {r: 36, g: -2.9, b: -62.2, a: 0}
+    - _targetPosition: {r: -50.42, g: -0.029999971, b: -8.48, a: 0}

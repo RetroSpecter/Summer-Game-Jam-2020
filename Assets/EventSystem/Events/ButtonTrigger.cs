@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ButtonTrigger : EventTrigger
 {
     public LayerMask pressable;
 
     public bool _buttonOn;
+    public UnityEvent onButtonDown; 
 
     void Update() {
         bool buttonOn = false;
@@ -22,6 +24,7 @@ public class ButtonTrigger : EventTrigger
 
         if (buttonOn != _buttonOn) {
             if (buttonOn == true) {
+                onButtonDown.Invoke();
                 triggerOn?.Invoke();
             } else {
                 triggerOff?.Invoke();

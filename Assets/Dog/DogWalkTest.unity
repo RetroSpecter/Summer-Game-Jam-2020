@@ -3506,6 +3506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b3a5ee10c496145b13fbae57ac9f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 2129750604}
 --- !u!195 &1433883536
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4376,6 +4377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b3a5ee10c496145b13fbae57ac9f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
 --- !u!195 &1723219168
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -76,7 +76,7 @@ public class RigidbodyCharacterController : MonoBehaviour
     public void StopAllAction()
     {
         StateMachine.StopStateMachine();
-
+        anim.SetFloat("velocity", 0);
         //TODO: the better way to do this would be to make the dropping pickedUPObject its own state
         if (pickedUpObject != null) {
             pickedUpObject.transform.parent = null;
@@ -271,10 +271,11 @@ public class RigidbodyCharacterController : MonoBehaviour
         {
             transform.forward = input;
             
-            //if (NavMesh.SamplePosition(transform.position + transform.forward * 0.5f, out NavMeshHit hit, 0.1f, NavMesh.AllAreas)) {
-                rigid.velocity = new Vector3(input.x * speed, rigid.velocity.y, input.z * speed);
-            //}
+            rigid.velocity = new Vector3(input.x * speed, rigid.velocity.y, input.z * speed);
         }
+
+        Ray groundRay = new Ray(transform.position + Vector3.up/2, -Vector3.up);
+        anim.SetBool("falling", Physics.Raycast(groundRay, 1, floorLayer));
     }
 
     private void InteractWithWell()
@@ -327,6 +328,14 @@ public class RigidbodyCharacterController : MonoBehaviour
         }
         hit = new RaycastHit();
         return false;
+    }
+
+    public Sequence expandWater(float timing) {
+        Sequence s = DOTween.Sequence();
+        greeneryRadius = 100;
+        s.AppendCallback(() => { WaterContainerManager.instance.AddWatersource(this.gameObject, greeneryRadius); });
+        s.Append(greeneryMask.transform.DOScale(Mathf.Lerp(0, greeneryRadius, playerFillLevel / maxFillLevel), 0.5f));
+        return s;  
     }
 
     private Sequence TransferWaterToContainer(WaterContainer container) {

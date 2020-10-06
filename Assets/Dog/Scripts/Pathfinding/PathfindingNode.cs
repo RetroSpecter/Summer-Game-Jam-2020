@@ -6,6 +6,7 @@ public class PathfindingNode : MonoBehaviour
 {
 
     public PathfindingNode next;
+    public float waitTime = 0;
 
     public bool debug;
     private Color neighborDebugColor = Color.red;
